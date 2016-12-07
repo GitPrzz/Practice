@@ -4,12 +4,16 @@
 #include <iostream>
 #include <functional>
 #include <cstdio>
-
 #pragma once
 using namespace std;
+template <typename T> class Blob;
+template <typename T> class BlobPtr;
+
+
 template <typename T>
 class Blob
 {
+	friend class BlobPtr<T>;
 public:
 	typedef T value_type;
 	typedef typename std::vector<T>::size_type size_type;
