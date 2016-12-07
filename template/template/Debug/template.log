@@ -1,3 +1,7 @@
 ﻿  main.cpp
-  template.vcxproj -> E:\Git\repository\template\Debug\template.exe
-  template.vcxproj -> E:\Git\repository\template\Debug\template.pdb (Partial PDB)
+e:\git\repository\cpractice\template\template\blob.h(69): warning C4018: “<”: 有符号/无符号不匹配
+  e:\git\repository\cpractice\template\template\blob.h(68): note: 编译类 模板 成员函数“void Blob<int>::show(void)”时
+  e:\git\repository\cpractice\template\template\main.cpp(15): note: 参见对正在编译的函数 模板 实例化“void Blob<int>::show(void)”的引用
+  e:\git\repository\cpractice\template\template\main.cpp(11): note: 参见对正在编译的类 模板 实例化“Blob<int>”的引用
+  template.vcxproj -> E:\Git\repository\CPractice\template\Debug\template.exe
+  template.vcxproj -> E:\Git\repository\CPractice\template\Debug\template.pdb (Partial PDB)

@@ -110,6 +110,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Blob.h" />
     <ClInclude Include="Compare.h" />
   </ItemGroup>
   <ItemGroup>
