@@ -11,7 +11,10 @@ int main()
 
 	Blob<int> ptr = { 1,2,4,5 };
 	BlobPtr<int> p(ptr, ptr.size());
-	cout << *p << endl;
+	BlobPtr<int> q(ptr, ptr.size());
 	cout << *(++p) << endl;
+	cout << *q << endl;
+	cout << (q < p) << endl;
+	cout << (q == p) << endl;
 	system("pause");
 }

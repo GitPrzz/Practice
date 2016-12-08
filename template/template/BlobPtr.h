@@ -11,26 +11,26 @@ template <typename T>
 bool operator==(const BlobPtr<T> &l , const BlobPtr<T> &r);
 
 template <typename T>
-bool operator<(const BlobPtr<T> &l, const BlobPtr<T> &r);
+bool operator < (const BlobPtr<T> &l, const BlobPtr<T> &r);
 
 template <typename T>
 class BlobPtr
 {
-	friend bool operator<(const BlobPtr<T> &l, const BlobPtr<T> &r);
-	friend bool operator==(const BlobPtr<T> &l, const BlobPtr<T> &r);
+	friend bool operator < <T>(const BlobPtr<T>& l, const BlobPtr<T>& r);
+    friend bool operator== <T>(const BlobPtr<T> &l, const BlobPtr<T> &r);
 	typedef T value_type;
 	typedef typename std::vector<T>::size_type size_type;
 public:
 	BlobPtr():lit(0) {}
 	BlobPtr(Blob<T>& a,size_t b = 0):Ptr(a.data), lit(b) , n(0){}
-	T& operator*();
+	T& operator*() const;
 	BlobPtr& operator++();
 	BlobPtr& operator--();
 
 	BlobPtr operator ++(int);
 	BlobPtr operator --(int);
 private:
-	shared_ptr<std::vector<T>> check(std::size_t, const std::string&);
+	shared_ptr<std::vector<T>> check(std::size_t, const std::string&) const;
 	size_type n;
 	size_type lit;
 	std::weak_ptr<std::vector<T>> Ptr;
@@ -38,14 +38,16 @@ private:
 };
 
 template<typename T>
-T& BlobPtr<T>::operator*(){
-	shared_ptr<std::vector<T>> p = check(n, "dereference past end");
+T& BlobPtr<T>::operator*() const
+{
+	auto p = check(n, "dereference past end");
 	return (*p)[n];
 }
 
+/*Because I forgot to make it const,operator*() cannot use it..TAT */
 template <typename T>
-shared_ptr<std::vector<T>>
-BlobPtr<T>::check(std::size_t i, const std::string& msg)
+shared_ptr<std::vector<T>>     
+BlobPtr<T>::check(std::size_t i, const std::string& msg) const
 {
 	if (i < 0 || i >= lit)
 	{
@@ -88,22 +90,24 @@ BlobPtr<T> BlobPtr<T>::operator++(int )
 	return t;
 }
 
+
+
 template <typename T>
 bool operator==(const BlobPtr<T> &l, const BlobPtr<T> &r)
 {
-	if (l.Ptr.lock != r.Ptr.lock)
+	if (l.Ptr.lock() != r.Ptr.lock() )
 	{
 		throw runtime_error("ptrs to different Blobs!");
 	}
-	return *l == *r
+	return *l == *r;
 }
 
-template <typename T>
-bool operator<(const BlobPtr<T> &l, const BlobPtr<T> &r)
+template<typename T> 
+    bool operator< (const BlobPtr<T> &l, const BlobPtr<T> &r)
 {
-	if (l.Ptr.lock != r.Ptr.lock)
+	if (l.Ptr.lock() != r.Ptr.lock() )
 	{
 		throw runtime_error("ptrs to different Blobs!");
 	}
-	return *l < *r
+	return *l < *r;
 }
