@@ -27,6 +27,9 @@
     <ClInclude Include="foo.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="HashandSales.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

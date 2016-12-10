@@ -114,6 +114,7 @@
     <ClInclude Include="BlobPtr.h" />
     <ClInclude Include="Compare.h" />
     <ClInclude Include="foo.h" />
+    <ClInclude Include="HashandSales.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
