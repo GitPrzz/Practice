@@ -1,0 +1,6 @@
+poj 2888 Magic Bracelet(Polya+矩阵快速幂)
+hdu 2865 Polya计数+(矩阵 or 找规律 求C)
+hdu 5868 Polya计数
+poj 2409 Polya模板题
+poj 1286 polya(euler优化)
+HDU 3923 Ploya定理+逆元

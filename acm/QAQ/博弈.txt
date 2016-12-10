@@ -1,0 +1,7 @@
+poj 1704 Georgia and Bob(阶梯博弈)
+poj 2960 S-Nim
+poj 2425 AChessGame(博弈)
+poj2975 Nim 胜利的方案数
+hdu 5724 SG+状态压缩
+
+通过计算SG值得出结果,有的可以通过这个原理推出简单的方程解决.
