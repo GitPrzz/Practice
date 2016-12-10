@@ -24,6 +24,9 @@
     <ClInclude Include="BlobPtr.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="foo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

@@ -1,20 +1,10 @@
 #include <cstdio>
-#include "Compare.h"
-#include "Blob.h"
-#include "BlobPtr.h"
+#include "foo.h"
 #include <iostream>
 using namespace std;
 int main()
 {
-	//int a = 10, b = 100;
-	//cout << (Compare(a, b) ? 'a' : 'b') << endl;
-
-	Blob<int> ptr = { 1,2,4,5 };
-	BlobPtr<int> p(ptr, ptr.size());
-	BlobPtr<int> q(ptr, ptr.size());
-	cout << *(++p) << endl;
-	cout << *q << endl;
-	cout << (q < p) << endl;
-	cout << (q == p) << endl;
+	int a = 0; double b = 111; string c = "abc";
+	print(cout,a, b, c, 32);
 	system("pause");
 }
